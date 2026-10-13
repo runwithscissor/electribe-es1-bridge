@@ -1,47 +1,32 @@
-# Electribe ES-1 Bridge
+![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-yellow.svg)
+![Ableton Live](https://img.shields.io/badge/Ableton-Live%2012-orange?logo=ableton)
+![Max for Live](https://img.shields.io/badge/Max%20for%20Live-8.6.5-blue)
 
-**Bidirectional Max for Live controller for the Korg Electribe ES-1**
+# 🌉 Electribe ES-1 Bridge
 
-Electribe ES-1 Bridge brings the main controls of the Korg Electribe ES-1 into Ableton Live while preserving hands-on control from the hardware itself.
+This repository provides a **bidirectional Max for Live controller** for the **Korg Electribe ES-1**, bringing its main part parameters, global effects and delay controls directly into **Ableton Live 12**.
 
-The device provides **bidirectional MIDI/NRPN communication**: changes made on the ES-1 are reflected in Max for Live, and changes made in the Max for Live device are sent back to the ES-1.
+Changes made on the ES-1 are reflected in Max for Live, while changes made in the device are sent back to the hardware through MIDI/NRPN communication.
 
 > Independent community project. Not affiliated with or endorsed by Korg, Ableton, or Cycling '74.
 
-## Features
+## 🎯 Goal
 
-- Bidirectional ES-1 ↔ Max for Live control
-- Individual control for:
-  - Part 1
-  - Part 2
-  - Part 3
-  - Part 4
-  - Part 5
-  - Part 6A
-  - Part 6B
-  - Part 7A
-  - Part 7B
-  - Slice
-- Per-part controls:
-  - Pitch / Speed
-  - Filter
-  - Level
-  - Pan
-  - Effect On / Off
-  - Reverse On / Off
-- Global Effect section:
-  - Effect Type
-  - Edit 1
-  - Edit 2
-- Global Delay section:
-  - Depth
-  - Time
-  - BPM Sync
-- Custom presentation-mode interface
-- Part View selector for focused editing
-- Hardware feedback from incoming MIDI/NRPN data
+Turn the Korg Electribe ES-1 into a tightly integrated Ableton Live instrument while preserving the immediacy of hands-on hardware control.
 
-## Requirements
+## 🧩 Included in this Repository
+
+- `Electribe_ES-1_Bridge.amxd`: frozen Max for Live device
+- `DOCS/SETUP.md`: installation and routing guide
+- `DOCS/TROUBLESHOOTING.md`: common issues and fixes
+- `DOCS/MIDI_NOTES.md`: MIDI / NRPN implementation notes
+- `DOCS/FREEZE_AND_RELEASE.md`: release workflow
+- `CREDITS.md`: project provenance and upstream attribution
+- `CHANGELOG.md`: version history
+- `CONTRIBUTING.md`: contribution guidelines
+- `LICENSE.md`: license information
+
+## ⚙️ Requirements
 
 - Korg Electribe ES-1
 - Ableton Live with Max for Live
@@ -57,26 +42,36 @@ The device provides **bidirectional MIDI/NRPN communication**: changes made on t
 
 Other configurations may work but have not yet been formally tested.
 
-## Installation
+## 🛠 Features
+
+- Bidirectional ES-1 ↔ Max for Live control
+- Support for Parts 1–5, 6A/6B, 7A/7B and Slice
+- Pitch / Speed, Filter, Level and Pan controls
+- Per-part Effect On / Off
+- Per-part Reverse On / Off
+- Global Effect Type control with all 11 ES-1 effects
+- Effect Edit 1 / Edit 2
+- Global Delay Depth / Time
+- BPM Sync
+- Part View selector for focused editing
+- Custom presentation-mode interface
+- Hardware feedback from incoming MIDI/NRPN data
+
+## 📦 Getting Started
 
 1. Download `Electribe_ES-1_Bridge.amxd`.
-2. Copy it into your Ableton User Library or any folder indexed by Ableton Live.
-3. Connect the ES-1 MIDI OUT to your MIDI interface IN.
-4. Connect the MIDI interface OUT to the ES-1 MIDI IN.
+2. Copy it into your Ableton User Library or another folder indexed by Ableton Live.
+3. Connect ES-1 MIDI OUT → MIDI interface IN.
+4. Connect MIDI interface OUT → ES-1 MIDI IN.
 5. Load the device on the MIDI track used for the ES-1.
-6. Configure the track MIDI input so the device receives data from the ES-1.
-
-For the full setup procedure, see [DOCS/SETUP.md](DOCS/SETUP.md).
-
-## MIDI channel
+6. Set Ableton Live to receive MIDI from the ES-1.
 
 The ES-1 factory MIDI channel is **11**.
 
-If your ES-1 uses another MIDI channel, set Ableton Live to receive from the channel currently configured on the hardware.
+For the complete setup guide, see:  
+📄 [`DOCS/SETUP.md`](DOCS/SETUP.md)
 
-## Effect section
-
-Electribe ES-1 Bridge exposes all 11 ES-1 effect types:
+## 🎛 Effect Types
 
 | Value | Effect |
 |---:|---|
@@ -94,7 +89,7 @@ Electribe ES-1 Bridge exposes all 11 ES-1 effect types:
 
 The ES-1 uses one global effect type per pattern. Each part can independently enable or disable its Effect switch.
 
-## Delay section
+## ⏱ Delay
 
 Delay is global to the pattern and provides:
 
@@ -104,22 +99,40 @@ Delay is global to the pattern and provides:
 
 BPM Sync links Delay Time to the current pattern tempo.
 
-## Documentation
+## 📚 Documentation
 
 - [Setup](DOCS/SETUP.md)
 - [Troubleshooting](DOCS/TROUBLESHOOTING.md)
-- [Freeze & release workflow](DOCS/FREEZE_AND_RELEASE.md)
 - [MIDI implementation notes](DOCS/MIDI_NOTES.md)
+- [Freeze & release workflow](DOCS/FREEZE_AND_RELEASE.md)
 - [Credits & provenance](CREDITS.md)
 - [Changelog](CHANGELOG.md)
 - [Contributing](CONTRIBUTING.md)
 - [License](LICENSE.md)
 
-## Versioning
+## 🧬 Credits & Provenance
 
-The project follows semantic-style versioning:
+Electribe ES-1 Bridge is based on and substantially reworks **Electribe ES1 Full Kontrol v1.25** by **okan**, originally published on maxforlive.com in 2010 under an **AttributionNonCommercial** license.
 
-- `v1.0.0` — first stable public release
+Original device:  
+https://maxforlive.com/library/device/335/electribe-es1-full-kontrol
+
+Electribe ES-1 Bridge adds a redesigned interface, direct bidirectional MIDI/NRPN handling, updated routing logic, expanded hardware feedback, documentation, troubleshooting and a modern release workflow.
+
+See [`CREDITS.md`](CREDITS.md) for full provenance.
+
+## 📜 License
+
+Electribe ES-1 Bridge is distributed for **non-commercial use** under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
+
+Portions derived from **Electribe ES1 Full Kontrol v1.25** remain subject to the original AttributionNonCommercial terms under which that device was published.
+
+See [`LICENSE.md`](LICENSE.md).
+
+## ✨ Versioning
+
+Current release: **v1.0.0**
+
 - `v1.0.1` — bug fix
 - `v1.1.0` — backwards-compatible feature update
 - `v2.0.0` — major revision or breaking change
@@ -130,33 +143,14 @@ The distributed device remains named:
 
 Versions are tracked through Git tags and GitHub Releases rather than appended to the filename.
 
-## Project status
-
-**v1.0.0 — first public release**
-
-Core bidirectional control, effect handling, delay handling and per-part control have been tested in a real ES-1 + Ableton Live setup.
-
-## Acknowledgements
-
-Electribe ES-1 Bridge is based on and substantially reworks **Electribe ES1 Full Kontrol v1.25** by **okan**, originally published on maxforlive.com in 2010 under an **AttributionNonCommercial** license.
-
-Original device:
-https://maxforlive.com/library/device/335/electribe-es1-full-kontrol
-
-The original device provided the starting point for ES-1 control in Max for Live. Electribe ES-1 Bridge adds a redesigned interface, direct bidirectional MIDI/NRPN handling, updated routing logic, expanded hardware feedback, documentation, troubleshooting and a modern release workflow.
-
-See [CREDITS.md](CREDITS.md) for full provenance.
-
-## License
-
-Electribe ES-1 Bridge is distributed for **non-commercial use** under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
-
-Portions derived from **Electribe ES1 Full Kontrol v1.25** remain subject to the original AttributionNonCommercial terms under which that device was published.
-
-See [LICENSE.md](LICENSE.md).
-
-## Author
+## ✍🏻 Author
 
 Project redevelopment, interface redesign and documentation by [runwithscissor](https://github.com/runwithscissor).
 
-Feedback, bug reports and compatibility reports are welcome through GitHub Issues.
+📩 Feedback, bug reports and compatibility reports are welcome through GitHub Issues.
+
+📷 Check my [Instagram](https://www.instagram.com/runwithscissor)
+
+---
+
+Enjoy bridging the Electribe ES-1 with Ableton Live! 🎛️🌉
