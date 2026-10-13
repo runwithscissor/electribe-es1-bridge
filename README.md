@@ -4,6 +4,10 @@
 
 # 🌉 Electribe ES-1 Bridge
 
+Bidirectional Max for Live controller for the Korg Electribe ES-1.
+
+![Electribe ES-1 Bridge](IMAGES/electribe-es1-bridge.png)
+
 This repository provides a **bidirectional Max for Live controller** for the **Korg Electribe ES-1**, bringing its main part parameters, global effects and delay controls directly into **Ableton Live 12**.
 
 Changes made on the ES-1 are reflected in Max for Live, while changes made in the device are sent back to the hardware through MIDI/NRPN communication.
